@@ -23,16 +23,17 @@ function renderWordAndCount(url) {
     return response.json();
   })
   .then(function(wordObj) {
-    // console.log(Object.keys(wordObj.word)[0])
+    console.log(Object.values(wordObj.word)[0])
     // var li = document.createElement('li')
     //
     // let word_key = Object.keys(wordObj.word)[0]
     // li.innerHTML = word_key
     const header = document.querySelector("#head");
+    const count = document.querySelector("#count");
     // console.log(header.innerHTML + Object.keys(wordObj.word)[0])
 
     header.innerHTML = header.innerHTML + Object.keys(wordObj.word)[0]
-
+    count.innerHTML = count.innerHTML + Object.values(wordObj.word)[0]
   })
   .catch(error => {
     return error
